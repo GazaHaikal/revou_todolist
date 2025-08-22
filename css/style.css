@@ -1,0 +1,251 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+.container {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form */
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+form input, form button {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+form input:focus {
+  border-color: #74b9ff;
+}
+
+form button {
+  background: #74b9ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #0984e3;
+}
+
+/* Filter */
+.filter-container {
+  margin-bottom: 15px;
+}
+
+.filter-container input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
+
+/* To-Do List */
+#todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  background: #f1f2f6;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.todo-item:hover {
+  transform: scale(1.02);
+}
+
+.todo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-date {
+  font-size: 12px;
+  color: #888;
+}
+
+.delete-btn {
+  background: #ff7675;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #d63031;
+}
+
+/* Task selesai */
+.todo-text.done span:first-child {
+  text-decoration: line-through;
+  color: #777;
+}
+
+/* Actions button */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.done-btn {
+  background: #55efc4;
+  border: none;
+  color: #2d3436;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.done-btn:hover {
+  background: #00b894;
+}
+
+/* Sorting */
+.sort-container {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.sort-container select {
+  padding: 6px 10px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+}
+
+/* Theme toggle (Switch) */
+.theme-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "🌙";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  transition: 0.4s;
+}
+
+/* Checked State */
+input:checked + .slider {
+  background-color: #74b9ff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+  content: "🌞";
+}
+
+/* 🌙 Dark Mode */
+body.dark {
+  background: linear-gradient(135deg, #2c3e50, #000000);
+  color: #f1f2f6;
+}
+
+body.dark .container {
+  background: #2d3436;
+  color: #f1f2f6;
+}
+
+body.dark h1 {
+  color: #f1f2f6;
+}
+
+body.dark form input,
+body.dark form button,
+body.dark .filter-container input,
+body.dark .sort-container select {
+  background: #353b48;
+  color: #f1f2f6;
+  border: 2px solid #555;
+}
+
+body.dark .todo-item {
+  background: #3d3d3d;
+}
+
+body.dark .delete-btn {
+  background: #d63031;
+}
+
+body.dark .done-btn {
+  background: #00cec9;
+}

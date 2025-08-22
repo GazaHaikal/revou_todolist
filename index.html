@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern To-Do List</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Dark Mode Toggle -->
+    <div class="theme-toggle">
+    <label class="switch">
+        <input type="checkbox" id="theme-checkbox">
+        <span class="slider"></span>
+    </label>
+    </div>
+
+    <h1>📝 My To-Do List</h1>
+
+    <!-- Form Input -->
+    <form id="todo-form">
+      <input type="text" id="todo-input" placeholder="Enter your task..." required>
+      <input type="date" id="todo-date" required>
+      <button type="submit">Add Task</button>
+    </form>
+
+    <!-- Filter -->
+    <div class="filter-container">
+      <input type="text" id="filter-input" placeholder="Filter tasks...">
+    </div>
+
+    <!-- Sorting -->
+    <div class="sort-container">
+    <label for="sort-select">Sort by: </label>
+    <select id="sort-select">
+        <option value="default">Default</option>
+        <option value="date-asc">Date (Ascending)</option>
+        <option value="date-desc">Date (Descending)</option>
+        <option value="status">Status (Done first)</option>
+    </select>
+    </div>
+
+    <!-- To-Do List -->
+    <ul id="todo-list"></ul>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
